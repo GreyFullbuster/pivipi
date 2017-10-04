@@ -1,7 +1,7 @@
 {
   "name": "pivipi",
   "version": "1.0.0",
-  "description": "Site de statistique dans le esport, nom de projet pivipi, nom définitif à définir",
+  "description": "Site de statistique dans le esport",
   "main": "index.js",
   "directories": {
     "test": "tests"
