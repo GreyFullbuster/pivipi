@@ -1,0 +1,29 @@
+{
+  "name": "pivipi",
+  "version": "1.0.0",
+  "description": "Site de statistique dans le esport, nom de projet pivipi, nom définitif à définir",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreyFullbuster/pivipi.git"
+  },
+  "author": "Antoine Chauvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreyFullbuster/pivipi/issues"
+  },
+  "homepage": "https://github.com/GreyFullbuster/pivipi#readme",
+  "devDependencies": {
+    "grun": "^0.2.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
