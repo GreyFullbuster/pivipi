@@ -15,6 +15,7 @@ services:
 
   php:
     image: butterflydev/docker-symfony:latest
+#    build: php
     env_file:
       - ../.env
     networks:
