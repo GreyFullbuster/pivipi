@@ -92,3 +92,5 @@ data/production
 /vendor/
 /web/bundles/
 /node_modules
+/.sass-cache
+/.circleci
