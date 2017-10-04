@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: redis.yml }
-    - { resource: fos_rest.yml }
 
 parameters:
     locale: en
@@ -87,3 +86,8 @@ swiftmailer:
 jms_serializer:
     metadata:
         auto_detection: true
+
+# app/config/config.yml
+assetic:
+    filters:
+        jsqueeze: ~
