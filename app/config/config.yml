@@ -88,6 +88,6 @@ jms_serializer:
         auto_detection: true
 
 # app/config/config.yml
-assetic:
-    filters:
-        jsqueeze: ~
+#assetic:
+#    filters:
+#        jsqueeze: ~

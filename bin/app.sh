@@ -125,7 +125,7 @@ main ()
     COMMAND=$1
 
 
-    if [[ ! "$COMMAND" =~ ^pull|build|run|stop|destroy|ps|bash|badmin|exec|exec-root|composer|tests|lint$ ]]; then
+    if [[ ! "$COMMAND" =~ ^pull|build|run|stop|destroy|ps|bash|badmin|exec|exec-root|composer|console|tests|lint$ ]]; then
         echo "$COMMAND is not a supported command"
         exit 1
     fi

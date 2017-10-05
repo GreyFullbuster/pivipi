@@ -13,6 +13,5 @@ $ git clone https://github.com/GreyFullbuster/pivipi
 ```
 
 ```
-docker-compose up -d
+make run
 ```
-
