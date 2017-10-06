@@ -19,25 +19,43 @@ use AppBundle\Entity\Article;
 
 class DefaultController extends Controller
 {
-    /**
+	/**
      * @Route("/", name="homepage")
      */
+	public function addAction(Request $request)
+	{
+		$em = $this->getDoctrine()->getManager();
+		$articles = $em->getRepository('AppBundle:Article')->findAll();
+
+		#$date = new \DateTime("now");
+    	$article = new Article();
+
+
+    	$formBuilder = $this->get('form.factory')->createBuilder();
+
+    	$formBuilder
+    		->add('title',		TextType::class)
+    		->add('content',	TextareaType::class)
+    		->add('date',		DateType::class)
+    		->add('author',		TextType::class)
+    		->add('published',	CheckboxType::class)
+    		->add('save',		SubmitType::class)
+    	;
+
+    	dump($formBuilder);die;
+
+    	return $this->render('default/index.html.twig', array(
+    		'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+    	));
+	}
+    
     public function indexAction()
     {
     	$em = $this->getDoctrine()->getManager();
     	$totos = $em->getRepository('AppBundle:Toto')->findAll();
     	$articles = $em->getRepository('AppBundle:Article')->findAll();
 
-    	#$date = new \DateTime("now");
-    	#$article = new Article();
-	    #$article->setTitle('Titre');
-	    #$article->setContent('LOOOOOOOOOOOOOOOOOONG TEXTE');
-	    #$article->setDate($date);
-	    #$article->setAuthor('AC');
-
-	    #$em->persist($article);
-
-	    #$em->flush();
+    	
 
     	dump($totos, $articles);die;
 
