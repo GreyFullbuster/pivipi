@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="classes")
+ * @ORM\Table(name="stats_base_max")
  */
 
 class Classes
@@ -20,6 +20,7 @@ class Classes
 
 	private $idPlayer;
 	private $idMatch;
+	private $idTeam;
 	private $pdvMax;
 	private $perNeu;
 	private $perFeu;

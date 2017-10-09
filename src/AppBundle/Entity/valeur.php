@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="classes")
+ * @ORM\Table(name="value")
  */
 
-class Classes
+class Matchs
 {
 	/**
      * @ORM\Column(name="id", type="integer")
@@ -18,10 +18,6 @@ class Classes
      */
 	private $id;
 
-	private $name;
-	private $idPlayer;
-	private $idMatch;
-	private $idTeam;
-	private $idCompetition;
+	private $value;
 
 }
