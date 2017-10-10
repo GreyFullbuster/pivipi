@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="stats_base_max")
  */
 
-class Classes
+class StatsBaseMax
 {
 	/**
      * @ORM\Column(name="id", type="integer")
