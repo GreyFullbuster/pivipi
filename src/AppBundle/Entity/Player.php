@@ -6,19 +6,20 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="toto")
+ * @ORM\Table(name="players")
  */
-class Toto
+class Player
 {
 	/**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
 	private $id;
 
 	/**
-     * @ORM\Column(type="string", length=100)
+	 * Nom du joueur.
+     * @ORM\Column(name="name", type="string", length=255)
      */
 	private $name;
 

@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="action")
  */
 
-class Classes
+class Actions
 {
 	/**
      * @ORM\Column(name="id", type="integer")
@@ -18,6 +18,11 @@ class Classes
      */
 	private $id;
 
+	/**
+	 * ID du joueur qui fait l'action.
+     * @ORM\ManyToOne(targetEntity="action")
+     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     */
 	private $idStriker;
 	private $idTarget;
 	private $idTeamStriker;
