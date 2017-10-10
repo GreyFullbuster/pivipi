@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="classes")
+ * @ORM\Table(name="action")
  */
 
 class Classes
@@ -18,10 +18,11 @@ class Classes
      */
 	private $id;
 
-	private $name;
-	private $idPlayer;
+	private $idStriker;
+	private $idTarget;
+	private $idTeamStriker;
+	private $idTeamTarget;
 	private $idMatch;
-	private $idTeam;
-	private $idCompetition;
+	private $idTurn;
 
 }
