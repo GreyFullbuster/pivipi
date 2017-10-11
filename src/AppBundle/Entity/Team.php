@@ -16,13 +16,13 @@ class Team
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	private $id;
+	public $id;
 
 	/**
 	 * Nom de l'équipe.
      * @ORM\Column(name="name", type="string", length=255)
      */
-	private $name;
+	public $name;
 
 	public function getId()
 	{
@@ -36,7 +36,7 @@ class Team
 
 	public function getName()
 	{
-		return $name;
+		return $this->name;
 	}
 
 }

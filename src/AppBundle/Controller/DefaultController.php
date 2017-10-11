@@ -5,6 +5,10 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Player;
 use AppBundle\Entity\Team;
@@ -36,30 +40,35 @@ class DefaultController extends Controller
 
     	$em->persist($teams);*/
 
-    	$teamHasPlayers = new Team_Has_Players();
+    	/*$teamHasPlayers = new Team_Has_Players();
 
     	foreach($players as $i => $player)
     	{
-    		dump($player);
-    	}
-    	die;
-
-    	/*foreach($teams as $i => $team)
-    	{
-    		if($i === 0)
+    		if ($player->name === "Ds-Grey")
     		{
-    			$teamHasPlayers->setIdTeam($teams);
+    			$idPlayer = $player->id;
+    			$teamHasPlayers->setIdPlayer($idPlayer);
+    		}
+    	}
+
+    	foreach($teams as $i => $team)
+    	{
+    		if ($team->name === "God Serena")
+    		{
+    			$idTeam = $team->id;
+    			$teamHasPlayers->setIdTeam($idTeam);
     		}
     	}
     	
-    	$teamHasPlayers->setDateStart($date);*/
+    	$teamHasPlayers->setDateStart($date);
 
-    	/*$em->persist($teamHasPlayers);*/
+    	$em->persist($teamHasPlayers);
 
-    	/*$em->flush();*/
+    	$em->flush();*/
+
     	
 
-    	/*dump($teams, $players, $teamHasPlayers, $articles);die;*/
+    	dump($teams, $players, $teamHasPlayers, $articles);die;
 
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,

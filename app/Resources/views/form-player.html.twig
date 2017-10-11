@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <h1>Form</h1>
+
+        {{ form(form_player) }}
+        {{ dump() }}
+
+        {% for player in all_player %}
+            ID : {{ player.id }} <br> 
+            Name : {{ player.name }} <br><br>
+        {% endfor %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

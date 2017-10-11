@@ -16,7 +16,7 @@ class Team_Has_Players
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	private $id;
+	public $id;
 
 	/**
      * Id du joueur lié à une équipe.
@@ -24,7 +24,7 @@ class Team_Has_Players
      * @ORM\OneToMany(targetEntity="player")
      * @ORM\JoinColumn(name="id", referencedColumnName="id")
      */
-	private $idPlayer;
+	public $idPlayer;
 
 	/**
      * Id de l'équipe lié à un joueur.
@@ -32,13 +32,13 @@ class Team_Has_Players
      * @ORM\ManyToMany(targetEntity="team")
      * @ORM\JoinColumn(name="id", referencedColumnName="id")
      */
-     private $idTeam;
+     public $idTeam;
 
      /**
      * Date de la liaison.
      * @ORM\Column(name="date", type="datetime")
      */
-     private $dateStart;
+     public $dateStart;
 
      public function getId()
      {
@@ -52,7 +52,7 @@ class Team_Has_Players
 
      public function getIdPlayer()
      {
-          return $idPlayer;
+          return $this->idPlayer;
      }
 
      public function setIdTeam($idTeam)
@@ -62,7 +62,7 @@ class Team_Has_Players
 
      public function getIdTeam()
      {
-          return $idTeam;
+          return $this->idTeam;
      }
 
      public function setDateStart($dateStart)
@@ -72,7 +72,7 @@ class Team_Has_Players
 
      public function getDateStart()
      {
-          return $dateStart;
+          return $this->dateStart;
      }
 
 }
