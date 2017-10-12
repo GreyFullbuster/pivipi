@@ -17,19 +17,19 @@ class Value
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	public $id;
+	private $id;
  	
  	/**
  	 * @ORM\Column(name="actionValue", type="integer")
  	 */
-	public $actionValue;
+	private $actionValue;
 
 	/**
 	 * ID de l'action lié à la valeur.
      * @ORM\ManyToOne(targetEntity="action")
      * @ORM\JoinColumn(name="id", referencedColumnName="id")
      */
-	public $idAction;
+	private $idAction;
 
 	public function getId()
 	{

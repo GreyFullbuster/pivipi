@@ -1,7 +1,6 @@
 <?php
 
 // src/AppBundle/Controller/LuckyController.php
-
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

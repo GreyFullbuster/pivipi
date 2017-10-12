@@ -15,13 +15,13 @@ class Player
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	private $id;
+	public $id;
 
 	/**
 	 * Nom du joueur.
      * @ORM\Column(name="name", type="string", length=255)
      */
-	private $name;
+	public $name;
 
 	public function getId()
 	{
@@ -35,6 +35,6 @@ class Player
 
 	public function getName()
 	{
-		return $name;
+		return $this->name;
 	}
 }

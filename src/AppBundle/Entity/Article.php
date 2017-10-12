@@ -15,28 +15,28 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-	private $id;
+	public $id;
 
 	/**
      * @ORM\Column(name="title", type="string", length=255)
      */
-	private $title;
+	public $title;
 
 
 	/**
      * @ORM\Column(name="content", type="text", length=8000)
      */
-	private $content;
+	public $content;
 
 	/**
      * @ORM\Column(name="author", type="string", length=255)
      */
-	private $author;
+	public $author;
 
 	/**
      * @ORM\Column(name="date", type="date")
      */
-	private $date;
+	public $date;
 
 	public function getId()
 	{
