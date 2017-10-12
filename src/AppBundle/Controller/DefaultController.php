@@ -30,21 +30,13 @@ class DefaultController extends Controller
     	
 
     	$date = new \DateTime("now");
-    	/*$players = new Player();
-    	$players->setName('Ds-Grey');
 
-    	$em->persist($players);*/
-
-    	/*$teams = new Team();
-    	$teams->setName('God Serena');
-
-    	$em->persist($teams);*/
 
     	/*$teamHasPlayers = new Team_Has_Players();
 
     	foreach($players as $i => $player)
     	{
-    		if ($player->name === "Ds-Grey")
+    		if ($player->name === "Ds-Kappa")
     		{
     			$idPlayer = $player->id;
     			$teamHasPlayers->setIdPlayer($idPlayer);
@@ -53,18 +45,27 @@ class DefaultController extends Controller
 
     	foreach($teams as $i => $team)
     	{
-    		if ($team->name === "God Serena")
+    		if ($team->name === "Orangina")
     		{
     			$idTeam = $team->id;
     			$teamHasPlayers->setIdTeam($idTeam);
     		}
+    	}*/
+
+    	foreach ($players as $key => $player) {
+    		foreach ($teamHasPlayers as $key => $teamHas) {
+    			if ($player->id == $teamHas->idPlayer) {
+    				$player->setIdTeam($teamHas->idTeam);
+    			}
+    		}
     	}
-    	
-    	$teamHasPlayers->setDateStart($date);
+
+    	/*$teamHasPlayers->setDateStart($date);
 
     	$em->persist($teamHasPlayers);
 
     	$em->flush();*/
+  
 
     	
 

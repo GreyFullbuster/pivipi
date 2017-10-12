@@ -40,6 +40,12 @@ class Team_Has_Players
      */
      public $dateStart;
 
+     /**
+     * Date de la liaison.
+     * @ORM\Column(name="date", type="datetime")
+     */
+     public $dateEnd;
+
      public function getId()
      {
           return $id;
@@ -73,6 +79,16 @@ class Team_Has_Players
      public function getDateStart()
      {
           return $this->dateStart;
+     }
+
+     public function setDateEnd($dateEnd)
+     {
+          $this->dateEnd = $dateEnd;
+     }
+
+     public function getDateEnd()
+     {
+          return $this->dateEnd;
      }
 
 }

@@ -23,6 +23,14 @@ class Player
      */
 	public $name;
 
+	/**
+	 * Id de l'équipe
+     * @ORM\Column(name="idTeam", type="integer")
+     * @ORM\ManyToMany(targetEntity="team")
+     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     */
+	public $idTeam;
+
 	public function getId()
 	{
 		return $id;
@@ -36,5 +44,15 @@ class Player
 	public function getName()
 	{
 		return $this->name;
+	}
+
+	public function setIdTeam($idTeam)
+	{
+		$this->idTeam = $idTeam;
+	}
+
+	public function getIdTeam()
+	{
+		return $this->idTeam;
 	}
 }
