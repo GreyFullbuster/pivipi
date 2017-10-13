@@ -22,11 +22,14 @@ class PlayerController extends Controller
     public function addPlayer(Request $request)
     {
 
-    	$players = new Player();
+        $players = new Player();
+    	$teamHasPlayers = new Team_Has_Players();
+
+        $playerTeam = [$teamHasPlayers];
 
         $form = $this->get('form.factory')->createBuilder(FormType::class, $players)
-            ->add('name',   TextType::class)
-            ->add('save',   SubmitType::class)
+            ->add('name',       TextType::class)
+            ->add('save',       SubmitType::class)
             ->getForm()
         ;
 
@@ -44,12 +47,26 @@ class PlayerController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $players = $em->getRepository('AppBundle:Player')->findAll();
+        $teams = $em->getRepository('AppBundle:Team')->findAll();
         $teamHasPlayers = $em->getRepository('AppBundle:Team_Has_Players')->findAll();
+
+        foreach ($players as $player) {
+            foreach ($teamHasPlayers as $teamHas) {
+                if ($player->id == $teamHas->idPlayer) {
+                    $player->setIdTeam($teamHas->idTeam);
+                }
+            }
+        }
         
         return $this->render('form-player.html.twig', array(
             'form_player' => $form->createView(),
             'all_player' => $players,
-            'team_has' => $teamHasPlayers,
+            'all_teams' => $teams,
         ));
+    }
+
+    public function modPlayer(Request $request)
+    {
+
     }
 }

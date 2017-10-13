@@ -12,9 +12,17 @@
         {{ form(form_player) }}
         {{ dump() }}
 
+        {% for team in all_teams %}
+            {{ dump(team.id) }}
+            {{ dump(team.name) }}
+        {% endfor %}
+
         {% for player in all_player %}
             ID : {{ player.id }} <br> 
-            Name : {{ player.name }} <br><br>
+            Name : {{ player.name }} <br>
+            ID Equipe : {{ player.idTeam }}<br>
+            <button id="modPlay-{{ player.id }}">Update</button>
+            <button id="supPlay-{{ player.id }}">Delete</button><br><br>
         {% endfor %}
         {% block javascripts %}{% endblock %}
     </body>
